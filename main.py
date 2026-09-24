@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from sqlite3 import *
+import sqlite3
 app = FastAPI()
 
 @app.get("/")
@@ -9,6 +9,7 @@ def accueil():
 
 @app.get("/aide")
 def aide():
+	con = sqlite3.connect("data.db")
 	return {"hey roman"}
 	
 @app.post("/devis")
