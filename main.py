@@ -9,7 +9,6 @@ def accueil():
 
 @app.get("/aide")
 def aide():
-	
 	return {"hey"}
 	
 @app.post("/devis")
