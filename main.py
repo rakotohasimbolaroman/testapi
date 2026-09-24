@@ -5,10 +5,10 @@ app = FastAPI()
 @app.get("/")
 
 def accueil():
-	return {"message":"API Growatt"}
+	return {"message":"Bienvenue Chez Growatt Madagascar"}
 
-@app.get("/aide")
-def aide():
+@app.get("/unite")
+def getallunite():
 	con = sqlite3.connect("data.db")
 	cur = con.cursor()
 	tout = cur.execute("SELECT * FROM unite")
