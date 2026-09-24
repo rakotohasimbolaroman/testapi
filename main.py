@@ -9,7 +9,7 @@ def accueil():
 
 @app.get("/aide")
 def aide():
-	return {"hey"}
+	return {"hey roman"}
 	
 @app.post("/devis")
 def creer_devis(client,num):
