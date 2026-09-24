@@ -11,10 +11,7 @@ def accueil():
 def aide():
 	con = sqlite3.connect("data.db")
 	cur = con.cursor()
-	tout = cur.execute("SELECT * FROM unite")
-	e = ""
-	for i in tout:
-		e += i[0]
+	tout = cur.execute("SELECT * FROM unite").fetchall()
 	return {tout}
 	
 @app.post("/devis")
