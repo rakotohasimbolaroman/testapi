@@ -14,7 +14,7 @@ def aide():
 	tout = cur.execute("SELECT * FROM unite").fetchall()
 	f = {}
 	nb = 0
-	for i in e:
+	for i in tout:
 		f[nb] = {i}
 		nb += 1
 	return {f}
