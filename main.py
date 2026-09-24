@@ -7,7 +7,7 @@ app = FastAPI()
 def accueil():
 	return {"message":"Bienvenue Chez Growatt Madagascar"}
 
-@app.get("/unite")
+@app.get("/allunite")
 def getallunite():
 	con = sqlite3.connect("data.db")
 	cur = con.cursor()
