@@ -13,10 +13,8 @@ def aide():
 	cur = con.cursor()
 	tout = cur.execute("SELECT * FROM unite")
 	f = {}
-	nb = 0
 	for i in tout:
-		f[nb] = {i}
-		nb += 1
+		f[i[0]] = i[1]
 	return f
 	
 @app.post("/devis")
