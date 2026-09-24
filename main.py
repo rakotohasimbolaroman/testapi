@@ -10,7 +10,8 @@ def accueil():
 @app.get("/aide")
 def aide():
 	con = sqlite3.connect("data.db")
-	return {"hey roman"}
+	cur = con.cursor()
+	return {cur}
 	
 @app.post("/devis")
 def creer_devis(client,num):
