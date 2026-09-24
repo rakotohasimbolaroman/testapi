@@ -17,7 +17,7 @@ def aide():
 	for i in tout:
 		f[nb] = {i}
 		nb += 1
-	return {f}
+	return f
 	
 @app.post("/devis")
 def creer_devis(client,num):
