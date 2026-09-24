@@ -11,7 +11,7 @@ def accueil():
 def aide():
 	con = sqlite3.connect("data.db")
 	cur = con.cursor()
-	tout = cur.execute("SELECT * FROM unite").fetchall()
+	tout = cur.execute("SELECT * FROM unite")
 	f = {}
 	nb = 0
 	for i in tout:
