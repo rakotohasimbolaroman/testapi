@@ -9,7 +9,13 @@ def accueil():
 
 @app.get("/aide")
 def aide():
-	return {"Hello"}
+	con = sqlite3.connect("data.db")
+	cur = con.cursor()
+	f = []
+	e = cur.execute("SELECT * FROM Unite")
+	for i in e:
+		f.append(i[0])
+	return {f}
 	
 @app.post("/devis")
 def creer_devis(client,num):
