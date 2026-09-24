@@ -15,7 +15,6 @@ def aide():
 	f = {}
 	nb = 0
 	for i in e:
-		print(i)
 		f[nb] = {i}
 		nb += 1
 	return {f}
