@@ -46,3 +46,10 @@ def creer_devis(client,num):
 		"Client": client,
 		"num": num
 	}
+
+@app.post("/gendevis")
+def generer():
+	from docx import Document
+	doc = Document()
+	doc.add_paragraph("hello")
+	doc.save("devis.docx")
