@@ -26,7 +26,19 @@ def getalltype():
 		f[i[0]] = i[1]
 	con.close()
 	return f
-	
+
+@app.get("/prodprtype")
+def getprodbytype(type):
+	con = sqlite3.connect("data.db")
+	cur = con.cursor()
+	e = cur.execute(f"SELECT * FROM produits where id_type='{type}'").fetchall()
+	f = {}
+	nb = 0
+	for i in e:
+		f[nb] = i[1]
+		nb += 1
+	return f
+
 @app.post("/devis")
 def creer_devis(client,num):
 	return{
