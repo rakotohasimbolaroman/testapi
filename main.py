@@ -17,7 +17,7 @@ def getallunite():
 	return f
 
 @app.get("/alltype")
-def getallunite():
+def getalltype():
 	con = sqlite3.connect("data.db")
 	cur = con.cursor()
 	tout = cur.execute("SELECT * FROM type")
