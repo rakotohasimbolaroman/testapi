@@ -77,3 +77,10 @@ def getalltype():
 		compt += 1
 	con.close()
 	return f
+
+@app.put("/setprice")
+def changepr():
+	con = sqlite3.connect("data.db")
+	cur = con.cursor()
+	tout = cur.execute('UPDATE produits SET prix_unitaire = "20000" WHERE n_produit = "GPEO-6KL1" ')
+	con.commit()
