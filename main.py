@@ -53,3 +53,27 @@ def generer():
 	doc = Document()
 	doc.add_paragraph("hello")
 	doc.save("devis.docx")
+
+@app.get("/tousproduits")
+def getalltype():
+	con = sqlite3.connect("data.db")
+	cur = con.cursor()
+	tout = cur.execute("SELECT * FROM produits")
+	compt = 1
+	f = {}
+	e = {}
+	info = {}
+	for i in tout:
+		e["nom"] = i[1]
+		info["unite"] = i[2]
+		info["marque"] = i[3]
+		info["type"] = i[4]
+		info["prix"] = i[5]
+		info["taille"] = i[6]
+		info["sary"] = None
+		info["sys"] = i[7]
+		e["info"] = info
+		f[e["nom"]] = info
+		compt += 1
+	con.close()
+	return f
