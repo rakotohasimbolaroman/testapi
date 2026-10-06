@@ -59,7 +59,7 @@ def gettousprod():
 	con = sqlite3.connect("data.db")
 	cur = con.cursor()
 	tout = cur.execute("SELECT * FROM produits")
-	compt = 1
+	compteur = 1
 	f = {}
 	e = {}
 	info = {}
@@ -72,8 +72,9 @@ def gettousprod():
 		info["taille"] = i[6]
 		info["sary"] = None
 		info["sys"] = i[7]
-		f[i[1]] = {"unite" : i[2], "marque": i[3], "type":i[4],"prix":i[5],"taille":i[6],"sary":None,"sys":i[7]}
-
+		f[str(compteur)] = i[1]
+		f["info"+str(compteur)] = {"unite" : i[2], "marque": i[3], "type":i[4],"prix":i[5],"taille":i[6],"sary":None,"sys":i[7]}
+		compteur += 1
 	con.close()
 	return f
 
