@@ -55,7 +55,7 @@ def generer():
 	doc.save("devis.docx")
 
 @app.get("/tousproduits")
-def getalltype():
+def gettousprod():
 	con = sqlite3.connect("data.db")
 	cur = con.cursor()
 	tout = cur.execute("SELECT * FROM produits")
